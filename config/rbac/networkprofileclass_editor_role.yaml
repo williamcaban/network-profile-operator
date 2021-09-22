@@ -1,0 +1,24 @@
+# permissions for end users to edit networkprofileclasses.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: networkprofileclass-editor-role
+rules:
+- apiGroups:
+  - network.fennecproject.io
+  resources:
+  - networkprofileclasses
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - network.fennecproject.io
+  resources:
+  - networkprofileclasses/status
+  verbs:
+  - get

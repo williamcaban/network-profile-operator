@@ -1,0 +1,20 @@
+# permissions for end users to view networkprofileclasses.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: networkprofileclass-viewer-role
+rules:
+- apiGroups:
+  - network.fennecproject.io
+  resources:
+  - networkprofileclasses
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - network.fennecproject.io
+  resources:
+  - networkprofileclasses/status
+  verbs:
+  - get

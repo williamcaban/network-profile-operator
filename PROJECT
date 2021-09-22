@@ -1,0 +1,36 @@
+domain: fennecproject.io
+layout:
+- go.kubebuilder.io/v3
+multigroup: true
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: network-profile
+repo: github.com/fennec-project/network-profile-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: fennecproject.io
+  group: network
+  kind: NetworkProfile
+  path: github.com/fennec-project/network-profile-operator/apis/network/v1alpha1
+  version: v1alpha1
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: fennecproject.io
+  group: network
+  kind: NetworkProfileClass
+  path: github.com/fennec-project/network-profile-operator/apis/network/v1alpha1
+  version: v1alpha1
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: fennecproject.io
+  group: network
+  kind: NetworkConfiguration
+  path: github.com/fennec-project/network-profile-operator/apis/network/v1alpha1
+  version: v1alpha1
+version: "3"
